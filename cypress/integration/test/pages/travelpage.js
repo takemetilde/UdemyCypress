@@ -1,5 +1,3 @@
-/// <reference types = "Cypress" />
-
 import BasePage from "./basepage";
 
 export default class TravelPage extends BasePage{
