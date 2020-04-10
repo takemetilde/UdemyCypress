@@ -1,10 +1,15 @@
 /// <reference types = "Cypress" />
 
-import TravelPage from '../../pages/travelpage'
-import {Given, And, Then} from "cypress-cucumber-preprocessor/steps"
+import {Given, And, Then, When} from "cypress-cucumber-preprocessor/steps"
+
+import TravelPage from "../../pages/travelpage"
 
 var travelPage = new TravelPage();
 
 Given('This is the first', () => {
-    cy.visit(travelPage.url);
+    cy.visit(travelPage.baseUrl);
+})
+
+When('This is visible', () => {
+    cy.get(travelPage.searchBoxElement).should("be.visible");
 })
